@@ -9,8 +9,8 @@ import (
 )
 
 type Problem struct {
-	Q string
-	A string
+	Question string
+	Answer   string
 }
 
 // ReadProblemsFromFile returns a struct
@@ -35,8 +35,8 @@ func parseLines(lines [][]string) []Problem {
 	ret := make([]Problem, len(lines))
 	for i, line := range lines {
 		ret[i] = Problem{
-			Q: line[0],
-			A: strings.TrimSpace(line[1]),
+			Question: line[0],
+			Answer:   strings.TrimSpace(line[1]),
 		}
 	}
 	return ret

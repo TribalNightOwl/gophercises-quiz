@@ -18,7 +18,7 @@ func main() {
 	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 	correct := 0
 	for i, p := range problems {
-		fmt.Printf("Problem #%d: %s = ", i+1, p.Q)
+		fmt.Printf("Problem #%d: %s = ", i+1, p.Question)
 
 		answerCh := make(chan string)
 		go func() {
@@ -32,7 +32,7 @@ func main() {
 			fmt.Printf("\nYou scored %d out of %d.\n", correct, len(problems))
 			return
 		case answer := <-answerCh:
-			if answer == p.A {
+			if answer == p.Answer {
 				correct++
 			}
 		}

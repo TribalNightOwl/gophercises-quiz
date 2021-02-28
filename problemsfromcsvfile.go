@@ -21,10 +21,7 @@ func readProblemsFromCsvFile(filename string) []problem {
 		exit("Failed to parse the provided CSV file")
 	}
 
-	fmt.Println(lines)
-	problems := parseLines(lines)
-	fmt.Println(problems)
-	return problems
+	return parseLines(lines)
 }
 
 // parseLines receives multiple CSV lines and return a slice of problems
